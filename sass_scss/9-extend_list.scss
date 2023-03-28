@@ -1,0 +1,19 @@
+%font_size {
+  font-size: 12px;
+}
+%text_color{
+  color: #00FF00;
+}
+%warning_color {
+  color: #FF0000;
+}
+
+.info {
+  @extend %font_size;
+}
+.success {
+  @extend %text_color;
+}
+.warning {
+  @extend %warning_color;
+}
