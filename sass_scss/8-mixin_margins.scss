@@ -1,0 +1,16 @@
+@mixin mag1 {
+  margin-left: 10px;
+	margin-right: 10px;
+}
+@mixin mag2 {
+  margin-left: 15px;
+	margin-right: 15px;
+}
+
+body {
+  @include mag1;
+}
+
+div {
+  @include mag2;
+}
