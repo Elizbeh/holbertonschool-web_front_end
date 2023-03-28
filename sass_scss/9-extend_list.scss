@@ -12,8 +12,10 @@
   @extend %font_size;
 }
 .success {
+  @extend %font_size;
   @extend %text_color;
 }
 .warning {
+  @extend %font_size;
   @extend %warning_color;
 }
