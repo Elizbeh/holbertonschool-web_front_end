@@ -1,0 +1,7 @@
+/* Create and assigns declaration using @for */
+
+@for $i from 1 to 6 {
+  h#{$i} {
+      font-size: $i * 1px;
+  }
+}
