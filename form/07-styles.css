@@ -798,7 +798,7 @@ textarea:valid:not(:placeholder-shown) {
   height: 1.5rem;
 }
 
-input[type='search'] .form-search {
+.form-search input[type='search'] {
   display: inline-block;
   color: var(--color-white);
   padding-right: 2rem;
@@ -814,7 +814,7 @@ input[type='search'] .form-search {
   transition: width .4s cubic-bezier(0, 0.795, 0, 1);
 }
 
-input[type='search']:focus .form-search {
+.form-search input[type='search']:focus {
   position: relative;
   width: 15rem;
   z-index: 1;
