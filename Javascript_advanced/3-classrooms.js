@@ -14,7 +14,7 @@ var createClassRoom = function(numberOfStudents) {
 } 
 
 var classRoom = createClassRoom(10);
-console.log(classRoom);
+
 
 console.log(classRoom[0]());
 console.log(classRoom[3]());
