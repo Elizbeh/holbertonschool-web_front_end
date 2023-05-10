@@ -35,5 +35,4 @@ draco.setName("Draco");
 draco.rewardStudent();
 draco.penalizeStudent();
 draco.penalizeStudent();
-draco.penalizeStudent();
 console.log(draco.getScore());
