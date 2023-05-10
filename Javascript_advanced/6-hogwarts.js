@@ -2,10 +2,10 @@ var studentHogwarts = (function() {
   var privateScore = 0;
   var name = null;
 
-  function changeScoreBy(points) {
+  var changeScoreBy = function(points) {
     privateScore += points;
   }
-
+  
   return {
     setName: function(newName) {
       name = newName;
@@ -28,11 +28,17 @@ harry.rewardStudent();
 harry.rewardStudent();
 harry.rewardStudent();
 harry.rewardStudent();
+
 console.log(harry.getScore());
 
-var draco = Object.create(studentHogwarts);
+const draco = Object.create(studentHogwarts);
 draco.setName("Draco");
 draco.rewardStudent();
+draco.penalizeStudent();
+draco.penalizeStudent();
+draco.penalizeStudent();
+draco.penalizeStudent();
+draco.penalizeStudent();
 draco.penalizeStudent();
 draco.penalizeStudent();
 console.log(draco.getScore());
