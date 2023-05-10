@@ -1,6 +1,6 @@
 console.log("Start of the execution queue");
 
-var setTimeout = (function() {
+setTimeout(function() {
   console.log("Final code block to be executed");
 }, 0);
 
