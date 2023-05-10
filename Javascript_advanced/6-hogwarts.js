@@ -20,9 +20,9 @@ var studentHogwarts = (function() {
       return name + ": " + privateScore;
     }
   };
-})();
+})
 
-var harry = Object.create(studentHogwarts);
+var harry = studentHogwarts();
 harry.setName("Harry");
 harry.rewardStudent();
 harry.rewardStudent();
@@ -31,13 +31,9 @@ harry.rewardStudent();
 
 console.log(harry.getScore());
 
-const draco = Object.create(studentHogwarts);
+const draco = studentHogwarts();
 draco.setName("Draco");
 draco.rewardStudent();
-draco.penalizeStudent();
-draco.penalizeStudent();
-draco.penalizeStudent();
-draco.penalizeStudent();
 draco.penalizeStudent();
 draco.penalizeStudent();
 draco.penalizeStudent();
