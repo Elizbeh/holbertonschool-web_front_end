@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function setCookies() {
+      var firstnameInput = document.getElementById("firstname");
+      var emailInput = document.getElementById("email");
+
+      var firstname = firstnameInput.value;
+      var email = emailInput.value;
+
+      document.cookie = "firstname=" + firstname;
+      document.cookie = "email=" + email;
+
+      alert("Cookies set successfully!");
+    }
+
+    function getCookie(name) {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.startsWith(name + "=")) {
+          return decodeURIComponent(cookie.substring(name.length + 1));
+        }
+      }
+      return "";
+    }
+
+    function showCookies() {
+      var email = getCookie("email");
+      var firstname = getCookie("firstname");
+
+      var paragraph = document.createElement("p");
+      paragraph.innerHTML = "Email: " + email + " - Firstname: " + firstname;
+      var existingParagraph = document.getElementById("cookiesParagraph");
+      if (existingParagraph) {
+        existingParagraph.remove();
+      }
+
+      paragraph.id = "cookiesParagraph";
+      document.body.appendChild(paragraph);
+    }
+  </script>
+</head>
+<body>
+  <h1>Login to the website</h1>
+  <input type="text" id="firstname" placeholder="First Name">
+  <input type="text" id="email" placeholder="Email">
+  <button onclick="setCookies()">Log me in</button>
+  
+  <h1>Cookies</h1>
+  <button onclick="showCookies()">Show cookies</button>
+</body>
+</html>
