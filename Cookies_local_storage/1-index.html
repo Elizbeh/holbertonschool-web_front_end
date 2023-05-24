@@ -11,23 +11,29 @@
       var email_input = document.getElementById("email");
 
       var firstname = first_n.value;
-      var  email = email_input.value;
+      var email = email_input.value;
 
-      document.cookie = "firstname=" + (firstname);
-      document.cookie = "email=" + (email);
+      var d = new Date();
+      d.setDate(d.getDate() + 10); // Set the expiration to 10 days from now
 
-      alert("Cookies set successfully");
+      document.cookie = "firstname=" + firstname + "; expires=" + d.toUTCString();
+      document.cookie = "email=" + email + "; expires=" + d.toUTCString();
+
+      alert("Cookies were set successfully");
     }
 
     function showCookies() {
-      var cookies = document.cookie.split(';');
-      
-      var paragraph = document.createElement("p");
-      paragraph.innerHTML= "Cookies: " + cookies.map(cookie => cookie.trim()).join(", ");
+      var cookie = document.cookie.split(";");
 
-      document.body.appendChild(paragraph);
+      if (cookie.length > 0) {
+        var paragraph = document.createElement("p");
+        paragraph.innerHTML = "Cookie: " + cookie.join(", ");
+        document.body.appendChild(paragraph);
+      } else {
+        alert("No cookies found.");
+      }
     }
-  </script>  <
+  </script>
 </head>
 <body>
   <h1>Login to the website</h1>
