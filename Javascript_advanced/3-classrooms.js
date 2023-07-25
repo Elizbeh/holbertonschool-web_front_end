@@ -6,10 +6,11 @@ var createClassRoom = function(numberOfStudents) {
   }
 
   var students = [];
-  for (var i = 0; i < numberOfStudents; i++) {
-    var seatNumber = i + 1;
-    students.push(studentSeat(seatNumber));
-  }
+    for (var i = 0; i < numberOfStudents; i++) {
+      var seatNumber = i + 1;
+      students.push(studentSeat(seatNumber));
+    }
+
   return students;
 } 
 
