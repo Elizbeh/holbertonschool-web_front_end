@@ -589,7 +589,7 @@
     }
 
     .post-meta-list [class^="post-meta"]:last-child{
-      border: none;
+      border: 0;
       margin-bottom: 3rem;
     }
 
