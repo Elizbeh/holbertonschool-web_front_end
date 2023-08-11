@@ -1,0 +1,3 @@
+$list_to_sort: john anna zoe kim felicia carrie;
+
+@debug "Sorted list: #{join(sort($list_to_sort), ' ')}";
