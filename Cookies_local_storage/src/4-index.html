@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+</head>
+
+<body>
+  <h1 id="welcomeMessage"></h1>
+
+  <div class="loginForm">
+    <h2>Login to the website</h2>
+    <input type="text" id="firstname" placeholder="First Name">
+    <input type="text" id="email" placeholder="Email">
+    <button onclick="setCookiesAndShowWelcomeMessage()">Log me in</button>
+  </div>
+
+  <script>
+    function setCookiesAndShowWelcomeMessage() {
+      var firstnameInput = document.getElementById("firstname");
+      var emailInput = document.getElementById("email");
+
+      var firstname = firstnameInput.value;
+      var email = emailInput.value;
+
+      // Use js-cookie set function
+      Cookies.set("firstname", firstname);
+      Cookies.set("email", email);
+
+      alert("Cookies set successfully!");
+
+      // Call the function to show the welcome message or form
+      showWelcomeMessageOrForm();
+    }
+
+    function showWelcomeMessageOrForm() {
+      var firstname = Cookies.get("firstname");
+      var welcomeMessage = document.getElementById("welcomeMessage");
+
+      if (firstname) {
+        // Build the welcome message with Javascript without using HTML
+        document.body.innerHTML = "<h1>Welcome: " + firstname + "<span id='logoutLink'>(logout)</span></h1>";
+
+        var logoutLink = document.getElementById("logoutLink");
+        logoutLink.addEventListener("click", function () {
+          Cookies.remove("firstname");
+          Cookies.remove("email");
+
+          showForm();
+        });
+      } else {
+        
+        showForm();
+      }
+    }
+
+    function showForm() {
+      var welcomeMessage = document.getElementById("welcomeMessage");
+      if (welcomeMessage) {
+        welcomeMessage.remove();
+      }
+
+      var loginForm = document.getElementById("loginForm");
+      loginForm.style.display = "block";
+    }
+  </script>
+
+</body>
+
+</html>
