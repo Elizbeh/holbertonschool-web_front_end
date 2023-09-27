@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1</title>
+  <script>
+    function setCookies() {
+      var first_n = document.getElementById("firstname");
+      var email_input = document.getElementById("email");
+
+      var firstname = first_n.value;
+      var email = email_input.value;
+
+      var d = new Date();
+      d.setDate(d.getDate() + 10); // Set the expiration to 10 days from now
+
+      document.cookie = "firstname=" + firstname + "; expires=" + d.toUTCString();
+      document.cookie = "email=" + email + "; expires=" + d.toUTCString();
+
+      alert("Cookies were set successfully");
+    }
+
+    function showCookies() {
+      var cookie = document.cookie.split(";");
+
+      if (cookie.length > 0) {
+        var paragraph = document.createElement("p");
+        paragraph.innerHTML = "Cookie: " + cookie.join(", ");
+        document.body.appendChild(paragraph);
+      } else {
+        alert("No cookies found.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Login to the website</h1>
+  <input type="text" id="firstname" placeholder="First Name">
+  <input type="text" id="email" placeholder="Email">
+  <button onclick="setCookies()">Log me in</button>
+  
+  <h1>Cookies</h1>
+  <button onclick="showCookies()">Show cookies</button>
+</body>
+</html>
